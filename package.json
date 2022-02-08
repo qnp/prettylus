@@ -19,6 +19,17 @@
     "typescript",
     "pug"
   ],
+  "homepage": "https://github.com/qnp/prettylus",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/qnp/prettylus.git"
+	},
+	"bugs": "https://github.com/qnp/prettylus/issues",
+	"icon": "prettylus.png",
+	"galleryBanner": {
+		"color": "#EB3C3C",
+		"theme": "dark"
+	},
   "activationEvents": [
     "onLanguage:vue"
   ],
