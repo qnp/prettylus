@@ -4,6 +4,7 @@
   "description": "Seamlessly format Vue SFCs that use Stylus.",
   "version": "0.0.1",
   "publisher": "ekqnp",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.64.0"
   },
