@@ -124,11 +124,11 @@ class Formatter implements vscode.DocumentFormattingEditProvider {
       ) as StylusFormattingOptions;
 
       const stylusSupremacyOptions: StylusFormattingOptions = {
-        ...resolvedStylusConfig,
         tabStopChar: documentOptions.insertSpaces
           ? ' '.repeat(documentOptions.tabSize)
           : '\t',
         newLineChar: document.eol === vscode.EndOfLine.CRLF ? '\r\n' : '\n',
+        ...resolvedStylusConfig,
       };
 
       // Select text that is contained between <style lang="stylus"> and </style>
