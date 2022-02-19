@@ -27,7 +27,8 @@ class Formatter implements vscode.DocumentFormattingEditProvider {
     const config = vscode.workspace.getConfiguration('prettylus');
     for (let name in extensionOptions) {
       if (config.has(name)) {
-        this.extensionOptions[name as keyof ExtensionOptions] = config.get(name);
+        this.extensionOptions[name as keyof ExtensionOptions] =
+          config.get(name);
       }
     }
   }
@@ -104,7 +105,7 @@ class Formatter implements vscode.DocumentFormattingEditProvider {
 
       // Get prettier config using builtin prettier resolver
       const resolvedPrettierConfig = rootPath
-        ? prettier.resolveConfig.sync(rootPath)
+        ? prettier.resolveConfig.sync(rootPath, { useCache: false })
         : {};
 
       const prettierOptions: prettier.Options = {
