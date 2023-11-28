@@ -78,7 +78,7 @@
   },
   "dependencies": {
     "@prettier/plugin-pug": "1.20.0",
-    "lru-cache": "^10.1.0",
+    "lru-cache": "10.1.0",
     "prettier": "2.5.1",
     "stylus-supremacy": "2.15.0"
   }
