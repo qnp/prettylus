@@ -1,12 +1,16 @@
 # Changelog
 
+## 0.1.11
+
+  - Re-add `lru-cache` dependency
+
 ## 0.1.10
 
   - Freeze dependencies and remove `lru-cache`
 
 ## 0.1.9
 
-  - Fix add missing `lru-cache` dependency
+  - Add missing `lru-cache` dependency
 
 ## 0.1.8
 
