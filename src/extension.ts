@@ -133,7 +133,7 @@ class Formatter implements vscode.DocumentFormattingEditProvider {
       };
 
       // Select text that is contained between <style lang="stylus"> and </style>
-      const startStyleMatch = text.match(/<style\s+lang="stylus"\s*>/);
+      const startStyleMatch = text.match(/<style(?:\s+scoped)?\s+lang="stylus"(?:\s+scoped)?\s*>/);
       const startStyleTag = startStyleMatch?.[0];
       const startStyle = startStyleMatch?.index;
       if (startStyleTag && startStyle) {
