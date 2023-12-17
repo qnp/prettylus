@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+  - Support for multiple style tags in a single file
+
 ## 0.1.12
 
   - Fix `lru-cache` dependency (downgrade)
