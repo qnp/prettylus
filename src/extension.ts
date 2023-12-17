@@ -132,11 +132,9 @@ class Formatter implements vscode.DocumentFormattingEditProvider {
         ...resolvedStylusConfig,
       };
 
-      // Select text that is contained between <style lang="stylus" ?scoped> and </style>, all potential occurrences
+      // Select text that is contained between <style lang="stylus"> and </style>, all potential occurrences
       const styleMatches = [
-        ...text.matchAll(
-          /<style(?:\s+scoped)?\s+lang="stylus"(?:\s+scoped)?\s*>/g
-        ),
+        ...text.matchAll(/<style[^>]*\s+lang="stylus"[^>]*>/g),
       ];
       for (let styleMatch of styleMatches) {
         const startStyleTag = styleMatch?.[0];
