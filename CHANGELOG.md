@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+  - Use more versatile support for style tags (allow all attributes)
+
 ## 0.2.0
 
   - Support for multiple style tags in a single file
