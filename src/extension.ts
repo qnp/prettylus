@@ -132,22 +132,29 @@ class Formatter implements vscode.DocumentFormattingEditProvider {
         ...resolvedStylusConfig,
       };
 
-      // Select text that is contained between <style lang="stylus"> and </style>
-      const startStyleMatch = text.match(/<style(?:\s+scoped)?\s+lang="stylus"(?:\s+scoped)?\s*>/);
-      const startStyleTag = startStyleMatch?.[0];
-      const startStyle = startStyleMatch?.index;
-      if (startStyleTag && startStyle) {
-        const endStyle = text.indexOf('</style>');
-        const rangeStyle = new vscode.Range(
-          document.positionAt(startStyle + startStyleTag.length),
-          document.positionAt(endStyle)
-        );
-        const style = document.getText(rangeStyle);
-        const formattedStyle = stylusSupremacy.format(
-          style,
-          stylusSupremacyOptions
-        );
-        outputContent = outputContent.replace(style, formattedStyle);
+      // Select text that is contained between <style lang="stylus" ?scoped> and </style>, all potential occurrences
+      const styleMatches = [
+        ...text.matchAll(
+          /<style(?:\s+scoped)?\s+lang="stylus"(?:\s+scoped)?\s*>/g
+        ),
+      ];
+      for (let styleMatch of styleMatches) {
+        const startStyleTag = styleMatch?.[0];
+        const startStyleIndex = styleMatch?.index;
+        if (startStyleTag && startStyleIndex) {
+          const endStyleIndex =
+            text.slice(startStyleIndex).indexOf('</style>') + startStyleIndex;
+          const rangeStyle = new vscode.Range(
+            document.positionAt(startStyleIndex + startStyleTag.length),
+            document.positionAt(endStyleIndex)
+          );
+          const style = document.getText(rangeStyle);
+          const formattedStyle = stylusSupremacy.format(
+            style,
+            stylusSupremacyOptions
+          );
+          outputContent = outputContent.replace(style, formattedStyle);
+        }
       }
 
       if (
