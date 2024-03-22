@@ -50,7 +50,7 @@
   },
   "scripts": {
     "lint": "eslint src --ext ts",
-    "compile": "tsc -p ./ && mv ./out/extension.js ./out/main.js",
+    "compile": "webpack --mode production",
     "vscode:prepublish": "rm -rf ./out && yarn run compile",
     "release": "vsce publish --yarn"
   },
