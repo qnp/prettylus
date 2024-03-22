@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.8
+
+  - Back to before, use prettier < 3 (^2.8.8)
+
 ## 0.2.7
 
   - Compile with webpack
