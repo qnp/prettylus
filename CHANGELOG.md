@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.5
+
+  - Bundle `@prettier/plugin-pug` and do not minify to identify potential errors
+
 ## 0.2.4
 
   - Do not externalize prettier since v3 mess up with ESM / CJS imports
