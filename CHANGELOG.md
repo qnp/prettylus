@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2
+
+  - Bump prettier to handle `satisfies` TS keyword properly
+
 ## 0.2.1
 
   - Use more versatile support for style tags (allow all attributes)
