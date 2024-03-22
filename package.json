@@ -54,7 +54,7 @@
     "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --external:stylus-supremacy --external:prettier --external:@prettier/plugin-pug --format=cjs --platform=node",
     "esbuild": "yarn run esbuild-base --sourcemap",
     "esbuild-watch": "yarn run esbuild-base --sourcemap --watch",
-    "release": "vsce publish --no-yarn"
+    "release": "vsce publish --yarn"
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
