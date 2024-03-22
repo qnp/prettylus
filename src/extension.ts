@@ -92,11 +92,11 @@ class Formatter implements vscode.DocumentFormattingEditProvider {
     return this.format(document, options, token);
   }
 
-  private format(
+  private async format(
     document: vscode.TextDocument,
     documentOptions: vscode.FormattingOptions,
     cancellationToken?: vscode.CancellationToken
-  ): vscode.TextEdit[] | null {
+  ): Promise<vscode.TextEdit[] | null> {
     const rootDirx = vscode.workspace.getWorkspaceFolder(document.uri);
     const rootPath = rootDirx ? rootDirx.uri.fsPath : undefined;
 
@@ -105,7 +105,7 @@ class Formatter implements vscode.DocumentFormattingEditProvider {
 
       // Get prettier config using builtin prettier resolver
       const resolvedPrettierConfig = rootPath
-        ? prettier.resolveConfig.sync(rootPath, { useCache: false })
+        ? await prettier.resolveConfig(rootPath, { useCache: false })
         : {};
 
       const prettierOptions: prettier.Options = {
@@ -115,7 +115,7 @@ class Formatter implements vscode.DocumentFormattingEditProvider {
 
       // Apply prettier to the full text (it will handle pug template and script)
       const text = document.getText(range);
-      let outputContent = prettier.format(text, prettierOptions);
+      let outputContent = await prettier.format(text, prettierOptions);
 
       // Get stylusrc options and create full formatting options object
       const resolvedStylusConfig = this.findConfigFileOptions(
