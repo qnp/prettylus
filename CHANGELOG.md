@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.9
+
+  - Fix: really use prettier > 2.8.8
+
 ## 0.2.8
 
   - Back to before, use prettier < 3 (^2.8.8)
