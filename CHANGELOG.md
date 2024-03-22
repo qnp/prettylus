@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.4
+
+  - Do not externalize prettier since v3 mess up with ESM / CJS imports
+
 ## 0.2.3
 
   - Bump `@prettier/plugin-pug`
