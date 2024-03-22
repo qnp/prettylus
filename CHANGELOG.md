@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.6
+
+  - Compile with `tsc`
+
 ## 0.2.5
 
   - Bundle `@prettier/plugin-pug` and do not minify to identify potential errors
