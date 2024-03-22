@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.7
+
+  - Compile with webpack
+
 ## 0.2.6
 
   - Compile with `tsc`
