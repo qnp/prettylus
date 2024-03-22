@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3
+
+  - Bump `@prettier/plugin-pug`
+
 ## 0.2.2
 
   - Bump prettier to handle `satisfies` TS keyword properly
