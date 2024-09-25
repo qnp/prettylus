@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+  - BREAKING: Use prettier 3
+
 ## 0.2.9
 
   - Fix: really use prettier > 2.8.8
