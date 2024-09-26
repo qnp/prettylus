@@ -2,7 +2,7 @@
   "name": "prettylus",
   "displayName": "Prettylus",
   "description": "Seamlessly format Vue SFCs that use Stylus.",
-  "version": "0.3.0",
+  "version": "0.2.9",
   "publisher": "ekqnp",
   "license": "MIT",
   "engines": {
@@ -50,6 +50,7 @@
   },
   "scripts": {
     "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
     "vscode:prepublish": "rm -rf ./out && yarn run esbuild-base --minify",
     "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --external:stylus-supremacy --external:prettier --external:@prettier/plugin-pug --format=cjs --platform=node",
     "esbuild": "yarn run esbuild-base --sourcemap",
@@ -72,9 +73,9 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@prettier/plugin-pug": "3.1.0",
+    "@prettier/plugin-pug": "1.20.0",
     "lru-cache": "6.0.0",
-    "prettier": "3.3.3",
+    "prettier": "2.8.8",
     "stylus-supremacy": "2.15.0"
   }
 }

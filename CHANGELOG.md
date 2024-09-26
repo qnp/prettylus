@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+  - Rollback to prettier < 3 (^2.8.8)
+
 ## 0.3.0
 
   - BREAKING: Use prettier 3
