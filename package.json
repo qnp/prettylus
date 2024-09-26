@@ -2,7 +2,7 @@
   "name": "prettylus",
   "displayName": "Prettylus",
   "description": "Seamlessly format Vue SFCs that use Stylus.",
-  "version": "0.2.9",
+  "version": "0.3.1",
   "publisher": "ekqnp",
   "license": "MIT",
   "engines": {
